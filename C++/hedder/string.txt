@@ -1,0 +1,14 @@
+    getline(cin,str) 一行丸々string型として得る。
+    str.size()　length()と同じ効果を持つ。  
+    str.at(i)　i番目の文字をchar型として得る。配列的な構成をしてる。またより簡単にstr[i]とできる。
+    アスキーコードにおいて、数字は連続したコードが割り当てられているので、文字である数字を整数に変換したい場合は '0' という文字を対象となる文字から引きます。
+例えばint c = '2' - '0'; // c は 2
+    便利なstring型の色々と使い方。
+if ( isdigit(ch) ) cout << "digit" << endl;
+if ( isalpha(ch) ) cout << "alpha" << endl;
+if ( islower(ch) ) cout << (char)toupper(ch) << endl;
+if ( isupper(ch) ) cout << (char)tolower(ch) << endl;
+https://qiita.com/MasahiroBW/items/3f56b22a079cd3272cd3
+    .find()で検索したい文字列の始まる場所を返す。なかった場合はstring::nposというクソデカい数字を返す。(多分no positionの略)
+単に存在するかどうかだけが気になる場合はstring::nposでない。を条件にすると良い。
+    str.substr(a,b)　str[a]を含みそこからb文字取るようにストリング型を作る。

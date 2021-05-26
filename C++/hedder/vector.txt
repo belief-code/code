@@ -1,0 +1,78 @@
+    配列よりも色々と便利な点がおおい。まず動的にメモリを確保できるので要素数を増やすことができる。
+単純に一つのヘッダになってるくらいなのでいろんな関数があって便利。
+var.size()で配列要素数を参照できるため，関数に渡しやすい
+var.size()でインデックスの上限を指定するとセグエラ起こさない
+var.resize(n)で要素数を変更できる
+var.push_back(d)で1つづつ要素を追加できる
+＝でコピーできる
+値渡しのように関数の引数にできる（アドレス渡し・参照渡しも可）
+関数の戻り値にできる
+algorithmでソートできる
+eraseで指定要素のみ削除できる
+1行でstringにargvを格納できる
+//関数の引数にするときは基本的に参照渡ししよう！
+
+https://qiita.com/ysuzuki19/items/df872d91c9c89cc31aee
+
+    宣言・初期化
+一次元配列
+vector<Type> v;
+vector<Type> v();
+vector<Type> v(n);
+vector<Type> v(n, d);
+
+二次元配列
+vector<vector<Type>> vv;
+vector<vector<Type>> vv();
+vector<vector<Type>> vv(n);
+vector<vector<Type>> vv(n, vector<Type>(m));
+vector<vector<Type>> vv(n, vector<Type>(m, d));
+
+    要素数の変更
+一次元配列
+v.resize(n);
+二次元配列
+vv.resize(n);
+for(size_t i=0; i<n; i++){
+  vv[i].resize(n);
+}
+ここでのsize_t型とはオブジェクトの大きさまでは少なくとも入りきれる型でintより小さいから軽い。
+もしくは
+vv.resize(n, vector<Type>(n));
+
+    末尾に要素を追加
+一次元配列
+v.push_back(d);
+二次元配列
+vv[i].push_back(d);
+
+    ベクトルの末尾にベクトルを追加
+for(size_t i=0; i<v1.size(); i++){
+  v2.push_back(v1[i]);
+}
+
+または
+copy(v1.begin(), v1.end(), back_inserter(v2));
+
+    指定範囲をコピー
+v1[]のa~bをv2[]にコピーする方法は以下．後者の方が完結なので嬉しい．
+v2.resize(b-a);
+for(size_t i=0; i<v2.size(); i++){
+  v2[i] = v1[a+i];
+}
+もしくは
+copy(v1.begin()+a, v1.begin()+b, v2.begin());
+
+    ソート
+昇順ソート
+sort(v.begin(), v.end());
+降順ソート
+sort(v.begin(), v.end(), greater<int>());
+
+    指定要素の削除
+先頭を削除
+v.erase(v.begin());
+末尾を削除
+v.erase(v.end());
+先頭からi番目の要素を削除
+v.erase(v.begin()+i);

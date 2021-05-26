@@ -1,0 +1,2 @@
+    #include<tuple>で使える。関数の戻り値をたくさん出せるようになるめっちゃ便利。最高。ありがとう。
+   https://qiita.com/dfukunaga/items/e2375369d5b280e4a939

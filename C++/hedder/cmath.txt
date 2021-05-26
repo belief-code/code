@@ -1,0 +1,7 @@
+double sqrt(double x)	x の平方根を返す　square　rootから
+double pow(double x, double n)	x の n 乗を返す powerから来てるらしい
+double fabs(double x)	x の絶対値を返す    function　absolutenumber？
+double sin(double x)	sin（正弦）を返す  引数の単位はラジアン
+double cos(double x)	cosin（余弦）を返す    引数の単位はラジアン
+double log(double x)	x の自然対数を返す
+double log10(double x)	x の常用対数を返す
