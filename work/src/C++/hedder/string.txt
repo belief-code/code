@@ -12,3 +12,5 @@ https://qiita.com/MasahiroBW/items/3f56b22a079cd3272cd3
     .find()で検索したい文字列の始まる場所を返す。なかった場合はstring::nposというクソデカい数字を返す。(多分no positionの略)
 単に存在するかどうかだけが気になる場合はstring::nposでない。を条件にすると良い。
     str.substr(a,b)　str[a]を含みそこからb文字取るようにストリング型を作る。
+
+    to_string(N) 数値Nをstring型に変換して返す
