@@ -1,0 +1,33 @@
+    物を最後尾に追加して操作は先頭にするっていうのがしやすいデータ構造。
+幅優先探索や最短経路問題でこのデータ構造が利用できる。
+またqueueとほぼ同じだけど要素を追加するときに大きさ順に入れていく構造
+つまり常に昇順に要素を並べたqueueが存在し、それをpriority_queue(優先度付きキュー)という。
+個人的にmultisetとの使い分け方が気になる。
+
+queue<type> a;
+    queue型の変数aを定義する。
+
+a.push(x);
+    キューaの最後尾に要素xを入れる。
+
+a.pop();
+    キューaの一番前の要素を取り除く。
+
+a.front();
+    キューaの一番前の要素を返す。
+
+a.size();
+    キューaの要素数を返す。
+
+a.empty();
+    キューaの要素数が0の時true、1以上の時falseを返す。
+
+    優先度付きキューの定義方法。
+// int 型の要素を持ち、最も小さい値を取り出す形の priority_queue を定義する場合
+priority_queue<int, vector<int>, greater<int>> Q1;
+
+// double 型の要素を持ち、最も小さい値を取り出す形の priority_queue を定義する場合
+priority_queue<double, vector<double>, greater<double>> Q2;
+
+// int 型の要素を持ち、最も大きい値を取り出す形の priority_queue を定義する場合
+priority_queue<int, vector<int>, less<int>> Q3;

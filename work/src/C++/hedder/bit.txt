@@ -1,0 +1,3 @@
+    __builtin_popcount(x)　xを2進数で表したときに立っている1の個数を返す。
+__builtin_popcountll(x) でxがlonglong型でも行ける。
+またbitsetでもa.count()で同じようなことが出来る。
