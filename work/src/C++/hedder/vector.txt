@@ -24,11 +24,15 @@ vector<Type> v(n);
 vector<Type> v(n, d);
 
 二次元配列
+vector<type> vv[n];
 vector<vector<Type>> vv;
 vector<vector<Type>> vv();
 vector<vector<Type>> vv(n);
 vector<vector<Type>> vv(n, vector<Type>(m));
 vector<vector<Type>> vv(n, vector<Type>(m, d));
+
+グローバル変数などで名前だけ宣言した後メイン関数の中で初期化したい時(便利)
+v.assign(n,d);
 
     要素数の変更
 一次元配列

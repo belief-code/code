@@ -28,3 +28,10 @@ S.clear();
     集合Sを空にする。
 S.find(x);
     集合Sから要素xのイテレーターを返す。
+    これと同じことをvectorでやるとすると
+    sort(v.begin(),v.end());
+    binary_search(v.begin,v.end,x);
+    となるが前者がO(nlogn)後者がO(logn)となりO(nlogn)となる。
+    しかし、vectorの場合は入力がpbでO(1)だがsetだとinsertでO(logn)なので
+    結局変わらないような気がする。なんなら入力がソートされている前提なら
+    vectorのほうが早い。
