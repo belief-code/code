@@ -35,7 +35,27 @@ const int INF = 1001001001;
 
 
 int main(){
-    int n;cin>>n;
-    cout<<n%n<<endl;
+    int n,k;cin>>n>>k;
+    vi c(n);
+    rep(i,n){
+        cin>>c[i];
+    }
+    vi sortedc=c;
+    uni(sortedc);
+    rep(i,n){
+        c[i]=lower_bound(rng(sortedc),c[i])-sortedc.begin();
+    }
+    vi table(sortedc.size(),0);
+    int var=0;;
+    int ans=0;
+    rep(i,n){
+        table[c[i]]++;
+        if(table[c[i]]==1)var++;
+        if(i>=k)table[c[i-k]]--;
+        if(i>=k&&table[c[i-k]]==0)var--;
+        ans=max(ans,var);
+    }
+    cout<<ans<<endl;
+
     return 0;
 }

@@ -36,6 +36,17 @@ const int INF = 1001001001;
 
 int main(){
     int n;cin>>n;
-    cout<<n%n<<endl;
+    string s;cin>>s;
+    rep(i,n){
+        if(s[i]=='1'){
+            if(i%2==1){
+                cout<<"Aoki"<<endl;
+                return 0;
+            }else{
+                cout<<"Takahashi"<<endl;
+                return 0;
+            }
+        }
+    }
     return 0;
 }

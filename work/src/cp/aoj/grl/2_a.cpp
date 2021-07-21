@@ -33,9 +33,43 @@ const double eps = 1e-10;
 const ll LINF = 1001002003004005006ll;
 const int INF = 1001001001;
 
+struct unionfind{
+    vi data;
+    unionfind(size_t sz) : data(sz,-1) {}
+
+    bool unite(int x,int y){
+        x=find(x),y=find(y);
+        if(x==y)return false;
+        if(data[x]>data[y])swap(x,y);
+        data[x]+=data[y];
+        data[y]=x;
+        return true;
+    }
+    int find(int k){
+        if(data[k]<0)return (k);
+        return data[k]=find(data[k]);
+    }
+};
 
 int main(){
-    int n;cin>>n;
-    cout<<n%n<<endl;
+    int v,e;cin>>v>>e;
+    unionfind mst(v);
+    vc<tuple<int,int,int>> edges;
+    rep(i,e){
+        int s,t,w;cin>>s>>t>>w;
+        edges.eb(w,s,t);
+    }
+    sort(edges.begin(),edges.end());
+    ll ans=0;
+    rep(i,e){
+        if(mst.unite(get<1>(edges[i]),get<2>(edges[i]))){
+            ans+=get<0>(edges[i]);
+        }
+    }
+    cout<<ans<<endl;
     return 0;
 }
+
+/*
+Kruskalやるだけ。キレイにフルスクラッチしてみる。
+*/

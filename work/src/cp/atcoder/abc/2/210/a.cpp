@@ -35,7 +35,8 @@ const int INF = 1001001001;
 
 
 int main(){
-    int n;cin>>n;
-    cout<<n%n<<endl;
+    int n,a,x,y;cin>>n>>a>>x>>y;
+    if(n>a)cout<<(n-a)*y+a*x<<endl;
+    else cout<<n*x<<endl;
     return 0;
 }
